@@ -1,0 +1,93 @@
+.slide--1{
+
+  .ground{
+    background-color: #E5E5E5;
+    width:100vw;
+    height:10vh;
+    position: absolute;
+    bottom:0;
+  }
+  
+  .car{
+    width:50vw;
+    position: absolute;
+    right:0;
+    bottom:0vh;
+    svg{
+      width:100%;
+    }
+  }
+
+  .bubble{
+    &:nth-of-type(1){
+      bottom:13vh;
+      left:5vw;
+     .bubble__line{
+       animation-delay:0.4s;
+     }
+   }
+   &:nth-of-type(2){
+    bottom: 23vh;
+    left: 60vw;
+
+     .bubble__line{
+       animation-delay:0.2s;
+     }
+   }
+   
+   &:nth-of-type(3){
+      bottom:30vh;
+      left:90vw;
+     .bubble__line{
+       animation-delay:0.3s;
+     }
+   }
+   
+    &:nth-of-type(4){
+      bottom:31vh;
+      left:73vw;
+      animation:scalePosition 2s infinite alternate;
+      @keyframes scalePosition {
+       0%{transform:translateX(0)}
+       100%{transform:translateX(-30px)}
+     }
+     .bubble__line{
+       animation-delay:0.1s;
+       //animation:none;
+     }
+   }
+   
+   .bubble__circleBig{
+     width:150px;
+     height:150px;
+     background-color:#8F8CC4;
+     border-radius:50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border:solid 6px #fff;
+     position: relative;
+     animation:scale 2s infinite alternate;
+     @keyframes scale{
+       0%{width:100px;height:100px}
+       100%{width:150px;height:150px}
+     }
+     &::after{
+       content:"";
+       display: block;
+       width:calc(100% - 13px);
+       height:calc(100% - 13px);
+       position: absolute;
+       border-radius:50%;
+       border:dashed 6px $color-main;
+       top:0;
+       left:0;
+     }
+     .bubble__circle{
+       position: relative;
+       z-index: 10;
+       //margin-top: 35px;
+     }
+   }
+  }
+}

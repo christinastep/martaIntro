@@ -1,0 +1,32 @@
+
+.bubble{
+  display: flex;
+  flex-direction:column;
+  transform-origin:left;
+  align-items: center;
+  position:absolute;
+   
+ 
+  .bubble__circle{
+    width:5vw;
+    height:5vw;
+    border-radius:50%;
+    background-color: #fff;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png");
+    background-size: 70%;
+    background-repeat:no-repeat;
+    background-position:center;
+  }
+  .bubble__line{
+    width:0px;
+    height:100px;
+    border:dashed 2px #fff;
+    animation:bubbel 1s 0s ease-in-out infinite alternate;
+    @keyframes bubbel{
+      0%{height:50px}
+      100%{height:100px}
+    }
+  }
+  
+}
+

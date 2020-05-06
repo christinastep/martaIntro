@@ -1,0 +1,83 @@
+$color-main: #6C37DC;
+$color-secondary: #4f4f4f;
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,500,300italic,500italic,600,700italic,900,300);
+
+
+body{
+  margin: 0;
+  height:90vh;
+  background-color: $color-main;
+}
+
+.intro{
+  height:80vh;
+  width:100vw;
+  position: relative;
+}
+
+footer{
+  background-color: grey;
+  width:100vw;
+  height:20vh;
+  position: relative;
+  z-index: 2;
+}
+
+nav{
+
+  display: flex;
+  position: absolute;
+  top:2vw;
+  left:2vw;
+  color:#fff;
+  font-weight: bold;
+  font-size: 2vw;
+  font-family: sans-serif;
+  z-index: 5;
+  a{
+    display: block;
+    margin-right: 1vw;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 50%;
+    width:3vw;
+    height:3vw;
+    color:#000;
+    text-decoration: none;
+    text-align: center;
+    line-height: 3vw;
+  }
+}
+
+.intro__text{
+  position: absolute;
+  color:#fff;
+  font-family:"Roboto", sans serif;
+  font-weight: 100;
+  font-style: italic;
+  top:30vh;
+  left:7vw;
+  .intro__text__line{
+    margin: 0;
+    font-size: 5vw;
+    line-height: 5.2vw;
+    transform:translateX(-100vw);
+    animation:textFadeIn 0.5s forwards;
+    @keyframes textFadeIn{
+      0%{transform:translateX(-100vw)}
+      100%{transform:translateX(0vw)}
+    }
+    &:nth-of-type(2){
+      margin-left: 70px;
+      animation-delay:0.2s;
+    }
+  }
+  
+ 
+  span{
+    font-weight: bold;
+  }
+}
+
+

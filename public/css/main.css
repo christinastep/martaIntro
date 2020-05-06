@@ -1,0 +1,353 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,500,300italic,500italic,600,700italic,900,300);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  margin: 0;
+  height: 90vh;
+  background-color: #6C37DC; }
+
+.intro {
+  height: 80vh;
+  width: 100vw;
+  position: relative; }
+
+footer {
+  background-color: grey;
+  width: 100vw;
+  height: 20vh;
+  position: relative;
+  z-index: 2; }
+
+nav {
+  display: flex;
+  position: absolute;
+  top: 2vw;
+  left: 2vw;
+  color: #fff;
+  font-weight: bold;
+  font-size: 2vw;
+  font-family: sans-serif;
+  z-index: 5; }
+  nav a {
+    display: block;
+    margin-right: 1vw;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 3vw;
+    height: 3vw;
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+    line-height: 3vw; }
+
+.intro__text {
+  position: absolute;
+  color: #fff;
+  font-family: "Roboto", sans serif;
+  font-weight: 100;
+  font-style: italic;
+  top: 30vh;
+  left: 7vw; }
+  .intro__text .intro__text__line {
+    margin: 0;
+    font-size: 5vw;
+    line-height: 5.2vw;
+    transform: translateX(-100vw);
+    animation: textFadeIn 0.5s forwards; }
+
+@keyframes textFadeIn {
+  0% {
+    transform: translateX(-100vw); }
+  100% {
+    transform: translateX(0vw); } }
+    .intro__text .intro__text__line:nth-of-type(2) {
+      margin-left: 70px;
+      animation-delay: 0.2s; }
+  .intro__text span {
+    font-weight: bold; }
+
+.bubble {
+  display: flex;
+  flex-direction: column;
+  transform-origin: left;
+  align-items: center;
+  position: absolute; }
+  .bubble .bubble__circle {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    background-color: #fff;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png");
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center; }
+  .bubble .bubble__line {
+    width: 0px;
+    height: 100px;
+    border: dashed 2px #fff;
+    animation: bubbel 1s 0s ease-in-out infinite alternate; }
+
+@keyframes bubbel {
+  0% {
+    height: 50px; }
+  100% {
+    height: 100px; } }
+
+.slide--1 .ground {
+  background-color: #E5E5E5;
+  width: 100vw;
+  height: 10vh;
+  position: absolute;
+  bottom: 0; }
+
+.slide--1 .car {
+  width: 50vw;
+  position: absolute;
+  right: 0;
+  bottom: 0vh; }
+  .slide--1 .car svg {
+    width: 100%; }
+
+.slide--1 .bubble:nth-of-type(1) {
+  bottom: 13vh;
+  left: 5vw; }
+  .slide--1 .bubble:nth-of-type(1) .bubble__line {
+    animation-delay: 0.4s; }
+
+.slide--1 .bubble:nth-of-type(2) {
+  bottom: 23vh;
+  left: 60vw; }
+  .slide--1 .bubble:nth-of-type(2) .bubble__line {
+    animation-delay: 0.2s; }
+
+.slide--1 .bubble:nth-of-type(3) {
+  bottom: 30vh;
+  left: 90vw; }
+  .slide--1 .bubble:nth-of-type(3) .bubble__line {
+    animation-delay: 0.3s; }
+
+.slide--1 .bubble:nth-of-type(4) {
+  bottom: 31vh;
+  left: 73vw;
+  animation: scalePosition 2s infinite alternate; }
+
+@keyframes scalePosition {
+  0% {
+    transform: translateX(0); }
+  100% {
+    transform: translateX(-30px); } }
+  .slide--1 .bubble:nth-of-type(4) .bubble__line {
+    animation-delay: 0.1s; }
+
+.slide--1 .bubble .bubble__circleBig {
+  width: 150px;
+  height: 150px;
+  background-color: #8F8CC4;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 6px #fff;
+  position: relative;
+  animation: scale 2s infinite alternate; }
+
+@keyframes scale {
+  0% {
+    width: 100px;
+    height: 100px; }
+  100% {
+    width: 150px;
+    height: 150px; } }
+  .slide--1 .bubble .bubble__circleBig::after {
+    content: "";
+    display: block;
+    width: calc(100% - 13px);
+    height: calc(100% - 13px);
+    position: absolute;
+    border-radius: 50%;
+    border: dashed 6px #6C37DC;
+    top: 0;
+    left: 0; }
+  .slide--1 .bubble .bubble__circleBig .bubble__circle {
+    position: relative;
+    z-index: 10; }
+
+.slide--3 .path__plane {
+  width: 100%;
+  height: 120%;
+  position: absolute;
+  left: 0; }
+
+.slide--3 .letter {
+  position: absolute;
+  right: 3vw;
+  bottom: 0vw;
+  width: 20vw;
+  height: 25vw; }
+  .slide--3 .letter:before {
+    overflow: hidden;
+    content: "1";
+    width: 6vw;
+    height: 6vw;
+    background-color: #6EB4E3;
+    position: absolute;
+    bottom: 1.5vw;
+    left: -2vw;
+    z-index: 100;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 4vw;
+    font-size: bold;
+    text-align: center;
+    font-family: sans-serif;
+    line-height: 6vw;
+    transform-origin: center;
+    transform: scale(0);
+    animation: number 0.5s 1.3s forwards; }
+
+@keyframes number {
+  0% {
+    transform: scale(0); }
+  100% {
+    transform: scale(1); } }
+  .slide--3 .letter:after {
+    content: "";
+    width: 120%;
+    height: 4vw;
+    background-color: #6C37DC;
+    position: absolute;
+    bottom: 0;
+    left: -20%; }
+  .slide--3 .letter .letter__element {
+    position: absolute;
+    width: 100%; }
+    .slide--3 .letter .letter__element.letter__back {
+      bottom: 0vw;
+      height: 30vw; }
+    .slide--3 .letter .letter__element.letter__front {
+      bottom: 0vw;
+      width: 100%;
+      height: 20vw; }
+    .slide--3 .letter .letter__element.letter__code {
+      width: 80%;
+      left: 10%;
+      bottom: 0;
+      bottom: 0vw;
+      height: 100%;
+      transform: translateY(60%);
+      animation: code 0.5s 1.3s forwards; }
+
+@keyframes code {
+  0% {
+    transform: translateY(60%); }
+  50% {
+    transform: translateY(-5%); }
+  85% {
+    transform: translateY(10%); }
+  100% {
+    transform: translateY(0%); } }
+
+.slide--3 .bubble:nth-of-type(1) {
+  bottom: 22vw;
+  right: 4vw; }
+  .slide--3 .bubble:nth-of-type(1) .bubble__line {
+    animation-delay: 0.4s; }
+
+.slide--3 .bubble:nth-of-type(2) {
+  bottom: 25vw;
+  right: 17vw; }
+
+.slide--2 .bubble {
+  bottom: 30vw;
+  right: 25vw; }
+  .slide--2 .bubble .bubble__line {
+    animation-delay: 0.4s; }
+
+.slide--2 .coupnBox {
+  background-color: #fff;
+  border-radius: 20px;
+  width: 50vw;
+  height: 20vw;
+  right: 3vw;
+  bottom: 3vw;
+  display: flex;
+  padding: 2vw;
+  position: absolute; }
+  .slide--2 .coupnBox .coupnBox__image {
+    width: 35%;
+    overflow: hidden; }
+    .slide--2 .coupnBox .coupnBox__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+  .slide--2 .coupnBox .coupnBox__text {
+    font-family: "Roboto", sans serif;
+    width: 50%;
+    margin-left: 2vw;
+    font-size: 2vw;
+    display: flex;
+    flex-direction: column;
+    position: relative; }
+    .slide--2 .coupnBox .coupnBox__text .coupnBox__text__titel {
+      font-weight: 600; }
+    .slide--2 .coupnBox .coupnBox__text .coupnBox__text__lieu {
+      margin-bottom: 1.5vw;
+      font-weight: 500;
+      color: grey;
+      font-size: 1.5vw; }
+    .slide--2 .coupnBox .coupnBox__text .coupnBox__text__reduction {
+      font-size: 1.7vw;
+      line-height: 1.8vw;
+      font-weight: 500; }
+  .slide--2 .coupnBox .coupnBox__text__button {
+    background-color: #6C37DC;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 1.5vw;
+    font-weight: 600;
+    padding: 1vw 2vw;
+    position: absolute;
+    bottom: 0;
+    left: 0; }
