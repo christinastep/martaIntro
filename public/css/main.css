@@ -48,14 +48,14 @@ body {
   background-color: #6C37DC; }
 
 .intro {
-  height: 80vh;
+  height: calc(100vh - 142px);
   width: 100vw;
   position: relative; }
 
 footer {
   background-color: grey;
   width: 100vw;
-  height: 20vh;
+  height: 142px;
   position: relative;
   z-index: 2; }
 
@@ -92,8 +92,8 @@ nav {
   left: 7vw; }
   .intro__text .intro__text__line {
     margin: 0;
-    font-size: 5vw;
-    line-height: 5.2vw;
+    font-size: 4vw;
+    line-height: 4.5vw;
     transform: translateX(-100vw);
     animation: textFadeIn 0.5s forwards; }
 
@@ -119,7 +119,6 @@ nav {
     height: 5vw;
     border-radius: 50%;
     background-color: #fff;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png");
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: center; }
@@ -138,7 +137,7 @@ nav {
 .slide--1 .ground {
   background-color: #E5E5E5;
   width: 100vw;
-  height: 10vh;
+  height: 14vh;
   position: absolute;
   bottom: 0; }
 
@@ -151,25 +150,31 @@ nav {
     width: 100%; }
 
 .slide--1 .bubble:nth-of-type(1) {
-  bottom: 13vh;
+  bottom: 18vh;
   left: 5vw; }
   .slide--1 .bubble:nth-of-type(1) .bubble__line {
     animation-delay: 0.4s; }
+  .slide--1 .bubble:nth-of-type(1) .bubble__circle {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png"); }
 
 .slide--1 .bubble:nth-of-type(2) {
-  bottom: 23vh;
+  bottom: 32vh;
   left: 60vw; }
+  .slide--1 .bubble:nth-of-type(2) .bubble__circle {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png"); }
   .slide--1 .bubble:nth-of-type(2) .bubble__line {
     animation-delay: 0.2s; }
 
 .slide--1 .bubble:nth-of-type(3) {
-  bottom: 30vh;
+  bottom: 40vh;
   left: 90vw; }
+  .slide--1 .bubble:nth-of-type(3) .bubble__circle {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png"); }
   .slide--1 .bubble:nth-of-type(3) .bubble__line {
     animation-delay: 0.3s; }
 
 .slide--1 .bubble:nth-of-type(4) {
-  bottom: 31vh;
+  bottom: 40vh;
   left: 73vw;
   animation: scalePosition 2s infinite alternate; }
 
@@ -178,6 +183,8 @@ nav {
     transform: translateX(0); }
   100% {
     transform: translateX(-30px); } }
+  .slide--1 .bubble:nth-of-type(4) .bubble__circle {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png"); }
   .slide--1 .bubble:nth-of-type(4) .bubble__line {
     animation-delay: 0.1s; }
 
@@ -216,13 +223,13 @@ nav {
 
 .slide--3 .path__plane {
   width: 100%;
-  height: 120%;
+  height: 110%;
   position: absolute;
   left: 0; }
 
 .slide--3 .letter {
   position: absolute;
-  right: 3vw;
+  right: 14vw;
   bottom: 0vw;
   width: 20vw;
   height: 25vw; }
@@ -289,21 +296,36 @@ nav {
   100% {
     transform: translateY(0%); } }
 
-.slide--3 .bubble:nth-of-type(1) {
-  bottom: 22vw;
-  right: 4vw; }
-  .slide--3 .bubble:nth-of-type(1) .bubble__line {
-    animation-delay: 0.4s; }
+.slide--3 .bubble {
+  opacity: 0; }
 
-.slide--3 .bubble:nth-of-type(2) {
-  bottom: 25vw;
-  right: 17vw; }
+@keyframes fadeinbubbel {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+  .slide--3 .bubble:nth-of-type(1) {
+    bottom: 22vw;
+    right: 16vw;
+    animation: fadeinbubbel 0.3s 1s forwards; }
+    .slide--3 .bubble:nth-of-type(1) .bubble__line {
+      animation-delay: 0.4s; }
+    .slide--3 .bubble:nth-of-type(1) .bubble__circle {
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png"); }
+  .slide--3 .bubble:nth-of-type(2) {
+    animation: fadeinbubbel 0.3s 1.2s forwards;
+    bottom: 25vw;
+    right: 26vw; }
+    .slide--3 .bubble:nth-of-type(2) .bubble__circle {
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png"); }
 
 .slide--2 .bubble {
   bottom: 30vw;
   right: 25vw; }
   .slide--2 .bubble .bubble__line {
     animation-delay: 0.4s; }
+  .slide--2 .bubble .bubble__circle {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png"); }
 
 .slide--2 .coupnBox {
   background-color: #fff;
