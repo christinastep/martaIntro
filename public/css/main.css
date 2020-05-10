@@ -82,6 +82,9 @@ nav {
     text-align: center;
     line-height: 3vw; }
 
+.swiper-slide-active .intro__text__line {
+  animation: textFadeIn 0.5s forwards; }
+
 .intro__text {
   position: absolute;
   color: #fff;
@@ -94,8 +97,7 @@ nav {
     margin: 0;
     font-size: 4vw;
     line-height: 4.5vw;
-    transform: translateX(-100vw);
-    animation: textFadeIn 0.5s forwards; }
+    transform: translateX(-100vw); }
 
 @keyframes textFadeIn {
   0% {
@@ -144,61 +146,75 @@ nav {
 .slide--1 .car {
   width: 50vw;
   position: absolute;
-  right: 0;
+  right: -50vw;
   bottom: 0vh; }
   .slide--1 .car svg {
     width: 100%; }
 
-.slide--1 .bubble:nth-of-type(1) {
-  bottom: 18vh;
-  left: 5vw; }
-  .slide--1 .bubble:nth-of-type(1) .bubble__line {
-    animation-delay: 0.4s; }
-  .slide--1 .bubble:nth-of-type(1) .bubble__circle {
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png"); }
+.slide--1.swiper-slide-active .car {
+  animation: car 0.5s 0.6s forwards; }
 
-.slide--1 .bubble:nth-of-type(2) {
-  bottom: 32vh;
-  left: 60vw; }
-  .slide--1 .bubble:nth-of-type(2) .bubble__circle {
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png"); }
-  .slide--1 .bubble:nth-of-type(2) .bubble__line {
-    animation-delay: 0.2s; }
+@keyframes car {
+  0% {
+    right: -50vw; }
+  100% {
+    right: 0; } }
 
-.slide--1 .bubble:nth-of-type(3) {
-  bottom: 40vh;
-  left: 90vw; }
-  .slide--1 .bubble:nth-of-type(3) .bubble__circle {
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png"); }
-  .slide--1 .bubble:nth-of-type(3) .bubble__line {
-    animation-delay: 0.3s; }
+.slide--1 .bubble {
+  opacity: 0;
+  transition: opacity 0.3s; }
 
-.slide--1 .bubble:nth-of-type(4) {
-  bottom: 40vh;
-  left: 73vw;
-  animation: scalePosition 2s infinite alternate; }
+@keyframes bubbelfadein {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 100%; } }
+  .slide--1 .bubble:nth-of-type(1) {
+    bottom: 18vh;
+    left: 5vw; }
+    .slide--1 .bubble:nth-of-type(1) .bubble__line {
+      animation-delay: 0.4s; }
+    .slide--1 .bubble:nth-of-type(1) .bubble__circle {
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png"); }
+  .slide--1 .bubble:nth-of-type(2) {
+    bottom: 32vh;
+    left: 60vw; }
+    .slide--1 .bubble:nth-of-type(2) .bubble__circle {
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png"); }
+    .slide--1 .bubble:nth-of-type(2) .bubble__line {
+      animation-delay: 0.2s; }
+  .slide--1 .bubble:nth-of-type(3) {
+    bottom: 40vh;
+    left: 90vw; }
+    .slide--1 .bubble:nth-of-type(3) .bubble__circle {
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png"); }
+    .slide--1 .bubble:nth-of-type(3) .bubble__line {
+      animation-delay: 0.3s; }
+  .slide--1 .bubble:nth-of-type(4) {
+    bottom: 40vh;
+    left: 73vw;
+    animation: scalePosition 2s infinite alternate; }
 
 @keyframes scalePosition {
   0% {
     transform: translateX(0); }
   100% {
     transform: translateX(-30px); } }
-  .slide--1 .bubble:nth-of-type(4) .bubble__circle {
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png"); }
-  .slide--1 .bubble:nth-of-type(4) .bubble__line {
-    animation-delay: 0.1s; }
-
-.slide--1 .bubble .bubble__circleBig {
-  width: 150px;
-  height: 150px;
-  background-color: #8F8CC4;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: solid 6px #fff;
-  position: relative;
-  animation: scale 2s infinite alternate; }
+    .slide--1 .bubble:nth-of-type(4) .bubble__circle {
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/1200px-Speaker_Icon.svg.png"); }
+    .slide--1 .bubble:nth-of-type(4) .bubble__line {
+      animation-delay: 0.1s; }
+  .slide--1 .bubble .bubble__circleBig {
+    width: 150px;
+    height: 150px;
+    background-color: #8F8CC4;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 6px #fff;
+    position: relative;
+    animation: scale 2s infinite alternate; }
 
 @keyframes scale {
   0% {
@@ -207,19 +223,30 @@ nav {
   100% {
     width: 150px;
     height: 150px; } }
-  .slide--1 .bubble .bubble__circleBig::after {
-    content: "";
-    display: block;
-    width: calc(100% - 13px);
-    height: calc(100% - 13px);
-    position: absolute;
-    border-radius: 50%;
-    border: dashed 6px #6C37DC;
-    top: 0;
-    left: 0; }
-  .slide--1 .bubble .bubble__circleBig .bubble__circle {
-    position: relative;
-    z-index: 10; }
+    .slide--1 .bubble .bubble__circleBig::after {
+      content: "";
+      display: block;
+      width: calc(100% - 13px);
+      height: calc(100% - 13px);
+      position: absolute;
+      border-radius: 50%;
+      border: dashed 6px #6C37DC;
+      top: 0;
+      left: 0; }
+    .slide--1 .bubble .bubble__circleBig .bubble__circle {
+      position: relative;
+      z-index: 10; }
+
+.slide--1.swiper-slide-active .bubble {
+  animation: bubbelfadein 0.3s forwards; }
+  .slide--1.swiper-slide-active .bubble:nth-of-type(1) {
+    animation-delay: 1s; }
+  .slide--1.swiper-slide-active .bubble:nth-of-type(2) {
+    animation-delay: 1.2s; }
+  .slide--1.swiper-slide-active .bubble:nth-of-type(4) {
+    animation-delay: 1.4s; }
+  .slide--1.swiper-slide-active .bubble:nth-of-type(3) {
+    animation-delay: 1.6s; }
 
 .slide--3 .path__plane {
   width: 100%;

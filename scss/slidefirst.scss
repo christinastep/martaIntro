@@ -7,18 +7,36 @@
     position: absolute;
     bottom:0;
   }
+
+  
   
   .car{
     width:50vw;
     position: absolute;
-    right:0;
+    right:-50vw;
     bottom:0vh;
     svg{
       width:100%;
     }
   }
 
+  &.swiper-slide-active{
+    .car{
+      animation: car 0.5s 0.6s forwards;
+      @keyframes  car {
+        0%{right: -50vw}
+        100%{right: 0;}
+      }
+    }
+  }
+
   .bubble{
+    opacity: 0;
+    @keyframes bubbelfadein {
+      0%{opacity: 0;}
+      100%{opacity: 100%;}
+    }
+    transition: opacity 0.3s;
     &:nth-of-type(1){
       bottom:18vh;
       left:5vw;
@@ -72,6 +90,8 @@
        //animation:none;
      }
    }
+
+   
    
    .bubble__circleBig{
      width:150px;
@@ -104,6 +124,23 @@
        z-index: 10;
        //margin-top: 35px;
      }
+   }
+  }
+  &.swiper-slide-active{
+    .bubble{
+      animation: bubbelfadein 0.3s forwards;
+      &:nth-of-type(1){
+        animation-delay: 1s;
+      }
+      &:nth-of-type(2){
+        animation-delay: 1.2s;
+      }
+      &:nth-of-type(4){
+        animation-delay: 1.4s;
+      }
+      &:nth-of-type(3){
+        animation-delay: 1.6s;
+      }
    }
   }
 }

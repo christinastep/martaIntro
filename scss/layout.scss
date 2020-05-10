@@ -50,6 +50,12 @@ nav{
   }
 }
 
+.swiper-slide-active{
+  .intro__text__line{
+    animation:textFadeIn 0.5s forwards;
+  }
+}
+
 .intro__text{
   position: absolute;
   color:#fff;
@@ -63,7 +69,7 @@ nav{
     font-size: 4vw;
     line-height: 4.5vw;
     transform:translateX(-100vw);
-    animation:textFadeIn 0.5s forwards;
+    
     @keyframes textFadeIn{
       0%{transform:translateX(-100vw)}
       100%{transform:translateX(0vw)}
